@@ -10,7 +10,11 @@ def multiply(a, b):
     return a * b
 
 def divide(a, b):
-    return a / b
+    try:
+        quotient = a / b
+    except ZeroDivisionError:
+        return "You can't devide by 0"
+    return quotient
 
 while True:
     num1 = int(input())
@@ -25,11 +29,11 @@ while True:
             num2 = int(input())
             print(add(num1, num2))
         case "-":
-            num2 = input()
+            num2 = int(input())
             print(subtract(num1, num2))
         case "*":
-            num2 = input()
+            num2 = int(input())
             print(multiply(num1, num2))
         case "/":
-            num2 = input()
+            num2 = int(input())
             print(divide(num1, num2))
